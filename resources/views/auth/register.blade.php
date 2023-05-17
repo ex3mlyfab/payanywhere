@@ -10,6 +10,10 @@
             @csrf
 
             <div>
+                <x-label for="client_id" value="{{ __('Patient Hospital Number') }}" />
+                <x-input id="client_id" class="block mt-1 w-full" type="text" name="client_id" :value="old('client_id')" required autofocus />
+            </div>
+            <div>
                 <x-label for="name" value="{{ __('Name') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
@@ -23,7 +27,7 @@
                 <x-label for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
-
+            <input type="hidden" name="type" value="client">
             <div class="mt-4">
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
